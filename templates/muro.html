@@ -24,7 +24,11 @@
                         <span class="num">#{{ loop.index }}</span>
                         <p class="autor">{{ item.autor }}</p>
                         <p class="texto">"{{ item.mensaje }}"</p>
-                        <p style="color: #8878a0; font-size: 0.85rem;">🎨 Color favorito: {{ item.color }}</p>
+                        <div class="mensaje-card-footer">
+                            <form action="/eliminar/{{ loop.index0 }}" method="POST" style="display: inline;">
+                                <button type="submit" class="btn-peligro">🗑️ Borrar</button>
+                            </form>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
